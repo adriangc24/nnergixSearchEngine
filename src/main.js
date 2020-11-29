@@ -21,16 +21,6 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname + "/public")));
 app.use(require('./routes.js'));
 
-var searchTerm = "pan"
-var url = 'http://www.bing.com/search?q=' + searchTerm;
-/* request(url, function(err, resp, body) {
-    $ = cheerio.load(body);
-    links = $('a'); //jquery get all hyperlinks
-    $(links).each(function(i, link) {
-        // console.log($(link).text() + ':\n  ' + $(link).attr('href'));
-    });
-}); */
-
 var server = app.listen(process.env.PORT || 3000, function() {
     console.log('Listening on port ' + server.address().port);
 });

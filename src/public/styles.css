@@ -10,6 +10,60 @@ body {
     margin-top: 15em;
 }
 
+#resultsContainer {
+    display: none;
+    height: 100%;
+}
+
+#resultsSelector {
+    right: 2em;
+    top: 2em;
+    display: inline-flex;
+    position: absolute;
+    align-items: center;
+}
+
+#navPagination {
+    margin-top: 0.5em;
+}
+
+#resultsSelector>span {
+    min-width: 8em;
+}
+
+.list-group {
+    margin-top: 1.2em;
+    overflow-y: scroll;
+    max-height: 49em;
+}
+
+#currentPage {
+    position: absolute;
+    right: 2em;
+}
+
+.list-group-item:hover {
+    background-color: rgb(212, 211, 211);
+}
+
+.list-group-item {
+    cursor: pointer;
+}
+
+#goBackButton {
+    margin-top: 0.5em;
+    margin-left: 0.2em;
+    color: #007BFF;
+    font-size: 300%;
+    cursor: pointer;
+}
+
+.alert.alert-danger {
+    display: none;
+    margin-top: 3em;
+    position: relative;
+}
+
 #searchInput {
     margin-top: 10%;
     width: 50%;
