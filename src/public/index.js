@@ -24,13 +24,11 @@ $("#itemsPerPage").on("change", function() {
 $("li.page-item").on("click", function() {
         if (!$(this).hasClass("disabled")) {
             if ($(this).children("a").text().includes("«")) {
-                console.log("atras");
                 $("li.number").each(function(i, elem) {
                     $(this).children("a").text(parseInt($(this).children("a").text()) - 3)
                 })
                 currentPage -= 3;
             } else if ($(this).children("a").text().includes("»")) {
-                console.log("alante");
                 $("li.number").each(function(i, elem) {
                     $(this).children("a").text(parseInt($(this).children("a").text()) + 3)
                 })
@@ -66,14 +64,12 @@ searchFunction = (textToSearch) => {
         success: function(response) {
             if (response.hasOwnProperty("error")) {
                 $("div.alert > span").text("ERROR: " + response.error).parent().show()
-                console.log("RESPONSE " + JSON.stringify(response))
                 throw "Error " + response.error
             }
             result = response.result;
             $("div.alert").hide()
             $("div#mainContainer").hide()
             $("div#resultsContainer").show()
-            console.log("RESPONSE " + JSON.stringify(result))
             appendResults(result);
         },
         error: function(err) {
@@ -96,17 +92,24 @@ appendResults = (result) => {
         x = itemsPerPage * currentPage;
     }
 
-    console.log(i, x)
-
-    for (i; i < x; i++) {
-        $(".list-group").append(`<li class="list-group-item">${result[i]}</li>`)
+    if (x <= result.length) {
+        $("li.page-item a:contains('»')").parent().removeClass("disabled")
+        for (i; i < x; i++) {
+            $(".list-group").append(`<li class="list-group-item">${result[i]}</li>`)
+        }
+    } else {
+        $("li.page-item a:contains('»')").parent().addClass("disabled")
     }
-
     result = []
+
 
     $(".list-group-item").on("click", function() {
         $(".list-group-item").removeClass("active")
         $(this).addClass("active")
+    })
+
+    $(".list-group-item").on("dblclick", function() {
+        searchFunction($(this).text())
     })
 
     // $("#currentPage").text("Current page: " + currentPage)
