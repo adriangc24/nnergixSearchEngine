@@ -18,9 +18,18 @@
     },
     "homepage": "https://github.com/adriangc24/nnergixSearchEngine#readme",
     "dependencies": {
+        "axios": "^0.21.0",
+        "body-parser": "^1.19.0",
+        "cheerio": "^1.0.0-rc.3",
+        "cors": "^2.8.5",
         "express": "^4.17.1",
         "express-async-errors": "^3.1.1",
-        "loglevel": "^1.7.1"
+        "loglevel": "^1.7.1",
+        "mongodb": "^3.6.3",
+        "mongoose": "^5.10.17",
+        "path": "^0.12.7",
+        "request": "^2.88.2",
+        "url-parse": "^1.4.7"
     },
     "devDependencies": {
         "nodemon": "^2.0.6"

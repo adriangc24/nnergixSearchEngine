@@ -1,0 +1,46 @@
+body {
+    background: url(./assets/techBackground.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#mainContainer {
+    margin-top: 15em;
+}
+
+#searchInput {
+    margin-top: 10%;
+    width: 50%;
+    box-shadow: 0 0 3px #ccc, 0 10px 15px #ebebeb inset;
+}
+
+#searchButton {
+    margin-top: 10%;
+    width: 20em;
+}
+
+.search {
+    position: relative;
+    font-size: 16px;
+    display: inline-block;
+}
+
+.search input {
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    min-width: 500px;
+}
+
+.search input {
+    text-indent: 5px;
+    padding-right: 30px;
+    box-sizing: border-box;
+}
+
+.search .fa-search {
+    position: absolute;
+    top: 34%;
+    right: 2%;
+}
