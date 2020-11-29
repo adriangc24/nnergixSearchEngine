@@ -8,7 +8,7 @@ _Estas instrucciones te permitirán obtener una copia del proyecto en funcionami
 
 ### Pre-requisitos 📋
 
-_Tener node js descargado_
+_Tener node js instalado en tu PC_
 
 ### Instalación 🔧
 
